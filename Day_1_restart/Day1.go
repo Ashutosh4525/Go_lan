@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 )
 
@@ -18,7 +18,7 @@ func main() {
 	// fmt.Println("respone: ", res)
 
 	//response data
-	data, err := ioutil.ReadAll(res.Body)
+	data, err := io.ReadAll(res.Body)
 	if err != nil {
 		fmt.Println("Enter reading response ", err)
 		return
